@@ -1,3 +1,9 @@
+.calc-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
 .calc-head {
     display: flex;
     flex-flow: column nowrap;
@@ -21,8 +27,10 @@
     width: 77vw;
     height: 3.5vh;
     flex-grow: 1;
-    padding: 1em;
+    padding: 0.5em;
     border: 2px solid black;
+
+    font-size: 50px;
 
 }
 .calc-body {
@@ -30,13 +38,17 @@
     flex-flow: row wrap;
     justify-content: center;
 
+
+
     padding: 1em;
 }
 .c-button {
-    border: 1px solid black;
+    border: 3px solid black;
     font-size: 100px;
     flex: 1 1 200px;
     align-self: center;
+
+    padding: 0.1em;
 
     text-align: center;
 
