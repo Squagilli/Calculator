@@ -1,4 +1,9 @@
 // HTML ITEMS
+const calcDisplay = document.querySelector('.calc-input');
+
+const one = document.querySelector('.one');
+
+const clear = document.querySelector('.clear');
 
 
 // CALULATOR LOGIC
@@ -39,3 +44,12 @@ function divide(parseOne, parseTwo) {
 }
 
 //operate(parseOne, parseTwo);
+
+
+// event listeners
+clear.addEventListener('click', function() {
+    calcDisplay.textContent = '';
+});
+one.addEventListener('click', function() {
+    calcDisplay.textContent = '1';
+});
