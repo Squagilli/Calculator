@@ -1,23 +1,38 @@
-let numberOne = 2;
-let numberTwo = 3;
+
+let numberOne = prompt('first number');
+let numberTwo = prompt('second number');
+const parseOne = parseInt(numberOne, 10);
+const parseTwo = parseInt(numberTwo, 10);
+
+function operate(parseOne, parseTwo) {
+    let operation = prompt('What u wanna do?');
+    if (operation === 'add') {
+        alert(sum(parseOne, parseTwo));
+    }
+    else if (operation === 'subtract') {
+        alert(subract(parseOne, parseTwo));
+    }
+    else if (operation === 'multiply') {
+        alert(multiply(parseOne, parseTwo));
+    }
+    else if (operation === 'divide') {
+        alert(divide(parseOne, parseTwo));
+    }
 
 
-function sum(numberOne, numberTwo) {
-    return numberOne + numberTwo;
 }
-function subract(numberOne, numberTwo) {
-    return numberOne - numberTwo;
+
+function sum(parseOne, parseTwo) {
+    return parseOne + parseTwo;
 }
-function multiply(numberOne, numberTwo) {
-    return numberOne * numberTwo;
+function subract(parseOne, parseTwo) {
+    return parseOne - parseTwo;
 }
-function divide(numberOne, numberTwo) {
-    return numberOne / numberTwo;
+function multiply(parseOne, parseTwo) {
+    return parseOne * parseTwo;
+}
+function divide(parseOne, parseTwo) {
+    return parseOne / parseTwo;
 }
 
-console.log(sum(2, 3));
-console.log(subract(9, 3));
-console.log(multiply(9, 3));
-console.log(divide(9, 3));
-
-
+operate(parseOne, parseTwo);
