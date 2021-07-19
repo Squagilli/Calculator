@@ -1,8 +1,11 @@
+// HTML ITEMS
 
-let numberOne = prompt('first number');
-let numberTwo = prompt('second number');
-const parseOne = parseInt(numberOne, 10);
-const parseTwo = parseInt(numberTwo, 10);
+
+// CALULATOR LOGIC
+//let numberOne = prompt('first number');
+//let numberTwo = prompt('second number');
+//const parseOne = parseInt(numberOne, 10);
+//const parseTwo = parseInt(numberTwo, 10);
 
 function operate(parseOne, parseTwo) {
     let operation = prompt('What u wanna do?');
@@ -35,4 +38,4 @@ function divide(parseOne, parseTwo) {
     return parseOne / parseTwo;
 }
 
-operate(parseOne, parseTwo);
+//operate(parseOne, parseTwo);

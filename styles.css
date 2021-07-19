@@ -1,0 +1,44 @@
+.calc-head {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-self: center;
+
+    padding: 0.5em;
+
+    border: 3px solid black;
+    width: 89vw;
+    height: auto;
+    font-size: 50px;
+}
+.calc-title {
+    align-self: center;
+    flex-grow: 1;
+    padding: 0.3em;
+}
+.calc-input {
+    align-self: center;
+    width: 77vw;
+    height: 3.5vh;
+    flex-grow: 1;
+    padding: 1em;
+    border: 2px solid black;
+
+}
+.calc-body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    padding: 1em;
+}
+.c-button {
+    border: 1px solid black;
+    font-size: 100px;
+    flex: 1 1 200px;
+    align-self: center;
+
+    text-align: center;
+
+    height: 2em;
+}
