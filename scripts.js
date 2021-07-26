@@ -15,54 +15,57 @@ const zeroButton = document.querySelector('.zero');
 // calc display 
 const calcDisplay = document.querySelector('.calc-input');
 
+// operator buttons
+const addButton = document.querySelector('.add');
+const subButton = document.querySelector('.subtract');
+const multButton = document.querySelector('.multiply');
+const divButton = document.querySelector('.divide');
+const equalButton = document.querySelector('.equals');
 
+
+let currentNumber = '';
+let operation = '';
+let a = '';
+let b = '';
 
 // basic functions
-let numberOne = 0;
-let numberTwo = 0;
-let operation = 0;
 
-operate(numberOne, numberTwo);
 
-console.log(numberOne);
-console.log(numberTwo);
-
-function add(numberOne, numberTwo) {
-    return Number(numberOne) + Number(numberTwo);
+function add(a, b) {
+    return Number(a) + Number(b);
 }
-function subtract(numberOne, numberTwo) {
-    return Number(numberOne) - Number(numberTwo);
+function subtract(a, b) {
+    return Number(a) - Number(b);
 }
-function multiply(numberOne, numberTwo) {
-    return Number(numberOne) * Number(numberTwo);
+function multiply(a, b) {
+    return Number(a) * Number(b);
 }
-function divide(numberOne, numberTwo) {
-    return Number(numberOne) / Number(numberTwo);
+function divide(a, b) {
+    return Number(a) / Number(b);
 }
 
-function operate(numberOne, numberTwo) {
+function operate(a, b) {
     let result = '';
     if (operation === 'add'){
-        result = add(numberOne, numberTwo);
-        alert(result);
+        result = add(a, b);
+        calcDisplay.innterHTML = result;
     }
     else if (operation === 'subtract') {
-        result = subtract(numberOne, numberTwo);
-        alert(result);
+        result = subtract(a, b);
+        calcDisplay.innterHTML = result;
     }
     else if (operation === 'multiply') {
-        result = multiply(numberOne, numberTwo);
-        alert(result);
+        result = multiply(a, b);
+        calcDisplay.innterHTML = result;
     }
     else if (operation === 'divide') {
-        result === divide(numberOne, numberTwo);
-        alert(result);
+        result === divide(a, b);
+        calcDisplay.innterHTML = result;
     }
     
 }
 
-// event listeners
-
+// number button event listeners
 oneButton.addEventListener('click', function() {
     calcDisplay.append('1');
 });
@@ -93,3 +96,44 @@ nineButton.addEventListener('click', function() {
 zeroButton.addEventListener('click', function() {
     calcDisplay.append('0');
 });
+
+
+// operator button event listeners
+addButton.addEventListener('click', function() {
+    currentNumber = calcDisplay.innerHTML;
+    console.log(currentNumber);
+    operation = 'add';
+    console.log(operation);
+    calcDisplay.innerHTML = '';
+
+})
+subButton.addEventListener('click', function() {
+    currentNumber = calcDisplay.innerHTML;
+    console.log(currentNumber);
+    operation = 'subtract';
+    console.log(operation);
+    calcDisplay.innerHTML = '';
+})
+multButton.addEventListener('click', function() {
+    currentNumber = calcDisplay.innerHTML;
+    console.log(currentNumber);
+    operation = 'multiply';
+    console.log(operation);
+    calcDisplay.innerHTML = '';
+})
+divButton.addEventListener('click', function() {
+    currentNumber = calcDisplay.innerHTML;
+    console.log(currentNumber);
+    operation = 'divide';
+    console.log(operation);
+    calcDisplay.innerHTML = '';
+})
+
+equalButton.addEventListener('click', function() {
+    let newNumber = calcDisplay.innerHTML;
+    console.log(currentNumber);
+    console.log(operation);
+    console.log(newNumber);
+    operate(currentNumber, newNumber);
+    console.log(operate(currentNumber, newNumber));
+})
