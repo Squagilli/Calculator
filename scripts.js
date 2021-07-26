@@ -8,6 +8,8 @@ const functionMultiply = document.querySelector('.multiply');
 const functionDivide = document.querySelector('.divide');
 const functionRemainder = document.querySelector('.percent');
 
+const functionEqual = document.querySelector('.equals');
+
 // HTML number buttons
 const zero = document.querySelector('.zero');
 const one = document.querySelector('.one');
@@ -34,17 +36,19 @@ const numberNine = '9';
 
 const numberDec = '.';
 
-
+let firstNumber = '';
+let secondNumber = '';
 
 // CALULATOR LOGIC
 
-//operate
+// user inputs first number (done)
 
-// user inputs first number (number buttons event listeners)
+// number is stored as num1 (done)
 
-// number is stored as num1
-// user selects operator
-// user inputs second number
+// user selects operator (done)
+
+// user inputs second number 
+// equals function takes number one and two and displays the result
 // display result
 
 
@@ -72,24 +76,29 @@ functionDecimal.addEventListener('click', function() {
     calcDisplay.append(numberDec);
 });
 functionAdd.addEventListener('click', function() {
-    let firstNumber = calcDisplay.innerHTML;
+    firstNumber = calcDisplay.innerHTML;
     console.log(firstNumber);
     calcDisplay.innerHTML = '';
 });
 functionSubtract.addEventListener('click', function() {
-    let firstNumber = calcDisplay.innerHTML;
+    firstNumber = calcDisplay.innerHTML;
     console.log(firstNumber);
     calcDisplay.innerHTML = '';
 });
 functionMultiply.addEventListener('click', function() {
-    let firstNumber = calcDisplay.innerHTML;
+    firstNumber = calcDisplay.innerHTML;
     console.log(firstNumber);
     calcDisplay.innerHTML = '';
 });
 functionDivide.addEventListener('click', function() {
-    let firstNumber = calcDisplay.innerHTML;
+    firstNumber = calcDisplay.innerHTML;
     console.log(firstNumber);
     calcDisplay.innerHTML = '';
+});
+functionEqual.addEventListener('click', function() {
+    secondNumber = calcDisplay.innerHTML;
+    console.log(secondNumber);
+    calcDisplay.innerHTML = Number(firstNumber) + Number(secondNumber);
 });
 
 
