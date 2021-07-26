@@ -47,89 +47,105 @@ let secondNumber = '';
 
 // user selects operator (done)
 
-// user inputs second number 
-// equals function takes number one and two and displays the result
-// display result
+// user inputs second number & it is stored (done)
+
+// equals function takes number one and two and displays the result 
 
 
 
-function sum(parseOne, parseTwo) {
-    return parseOne + parseTwo;
+function sum(firstNumber, secondNumber) {
+    return(firstNumber) + secondNumber;
 }
-function subract(parseOne, parseTwo) {
-    return parseOne - parseTwo;
+function subract(firstNumber, secondNumber) {
+    return(firstNumber) - secondNumber;
 }
-function multiply(parseOne, parseTwo) {
-    return parseOne * parseTwo;
+function multiply(firstNumber, secondNumber) {
+    return(firstNumber) * secondNumber;
 }
-function divide(parseOne, parseTwo) {
-    return parseOne / parseTwo;
+function divide(firstNumber, secondNumber) {
+    return(firstNumber) / secondNumber;
 }
-
-
 
 // Functional buttons event listeners
 clear.addEventListener('click', function() {
     calcDisplay.innerHTML = '';
+    firstNumber = '';
+    secondNumber = '';
+    console.log(firstNumber);
+    console.log(secondNumber);
+
 });
 functionDecimal.addEventListener('click', function() {
     calcDisplay.append(numberDec);
 });
+
 functionAdd.addEventListener('click', function() {
-    firstNumber = calcDisplay.innerHTML;
+    secondNumber = calcDisplay.innerHTML;
     console.log(firstNumber);
+    console.log(secondNumber);
     calcDisplay.innerHTML = '';
 });
 functionSubtract.addEventListener('click', function() {
-    firstNumber = calcDisplay.innerHTML;
-    console.log(firstNumber);
+    secondNumber = calcDisplay.innerHTML;
+    console.log(secondNumber);
     calcDisplay.innerHTML = '';
 });
+
 functionMultiply.addEventListener('click', function() {
-    firstNumber = calcDisplay.innerHTML;
-    console.log(firstNumber);
+    secondNumber = calcDisplay.innerHTML;
+    console.log(secondNumber);
     calcDisplay.innerHTML = '';
 });
 functionDivide.addEventListener('click', function() {
-    firstNumber = calcDisplay.innerHTML;
-    console.log(firstNumber);
+    secondNumber = calcDisplay.innerHTML;
+    console.log(secondNumber);
     calcDisplay.innerHTML = '';
 });
 functionEqual.addEventListener('click', function() {
-    secondNumber = calcDisplay.innerHTML;
+    console.log(firstNumber);
     console.log(secondNumber);
-    calcDisplay.innerHTML = Number(firstNumber) + Number(secondNumber);
 });
+
 
 
 // Number buttons event listeners
 zero.addEventListener('click', function() {
     calcDisplay.append(numberZero);
+
 });
 one.addEventListener('click', function() {
     calcDisplay.append(numberOne);
+
 });
 two.addEventListener('click', function() {
     calcDisplay.append(numberTwo);
+
 });
 three.addEventListener('click', function() {
     calcDisplay.append(numberThree);
+
 });
 four.addEventListener('click', function() {
     calcDisplay.append(numberFour);
+
 });
 five.addEventListener('click', function() {
     calcDisplay.append(numberFive);
+
 });
 six.addEventListener('click', function() {
     calcDisplay.append(numberSix);
+
 });
 seven.addEventListener('click', function() {
     calcDisplay.append(numberSeven);
+ 
 });
 eight.addEventListener('click', function() {
     calcDisplay.append(numberEight);
+  
 });
 nine.addEventListener('click', function() {
     calcDisplay.append(numberNine);
+  
 });
