@@ -1,5 +1,6 @@
 // HTML items
 
+// number buttons
 const oneButton = document.querySelector('.one');
 const twoButton = document.querySelector('.two');
 const threeButton = document.querySelector('.three');
@@ -11,13 +12,15 @@ const eightButton = document.querySelector('.eight');
 const nineButton = document.querySelector('.nine');
 const zeroButton = document.querySelector('.zero');
 
+// calc display 
+const calcDisplay = document.querySelector('.calc-input');
 
 
 
 // basic functions
-let numberOne = prompt('numebr');
-let numberTwo = prompt('nbumrt');
-let operation = prompt('what do');
+let numberOne = 0;
+let numberTwo = 0;
+let operation = 0;
 
 operate(numberOne, numberTwo);
 
@@ -58,3 +61,35 @@ function operate(numberOne, numberTwo) {
     
 }
 
+// event listeners
+
+oneButton.addEventListener('click', function() {
+    calcDisplay.append('1');
+});
+twoButton.addEventListener('click', function() {
+    calcDisplay.append('2');
+});
+threeButton.addEventListener('click', function() {
+    calcDisplay.append('3');
+});
+fourButton.addEventListener('click', function() {
+    calcDisplay.append('4');
+});
+fiveButton.addEventListener('click', function() {
+    calcDisplay.append('5');
+});
+sixButton.addEventListener('click', function() {
+    calcDisplay.append('6');
+});
+sevenButton.addEventListener('click', function() {
+    calcDisplay.append('7');
+});
+eightButton.addEventListener('click', function() {
+    calcDisplay.append('8');
+});
+nineButton.addEventListener('click', function() {
+    calcDisplay.append('9');
+});
+zeroButton.addEventListener('click', function() {
+    calcDisplay.append('0');
+});
