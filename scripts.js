@@ -1,4 +1,4 @@
-
+'use strict';
 // number buttons
 const oneButton = document.querySelector('.one');
 const twoButton = document.querySelector('.two');
@@ -22,6 +22,7 @@ const multButton = document.querySelector('.multiply');
 const divButton = document.querySelector('.divide');
 const equalButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear');
+const delButton = document.querySelector('.delete');
 
 // dynamic variables
 let currentNumber = '';
@@ -66,7 +67,7 @@ function operate(a, b) {
 }
 
 // keyboard number event listeners
-window.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function(e) {
     if (e.key === '1') {
         calcDisplay.append('1');
     }
@@ -175,6 +176,8 @@ equalButton.addEventListener('click', didEqual);
 
 clearButton.addEventListener('click', didClear);
 
+delButton.addEventListener('click', didDelete);
+
 // operator functions
 function didAdd() {
     currentNumber = calcDisplay.innerHTML;
@@ -219,4 +222,9 @@ function didClear() {
     result = '';
     a = '';
     b = '';
+}
+function didDelete() {
+    let toDelete = calcDisplay.innerHTML;
+    let newDisplay = toDelete.substring(0, toDelete.length -1);
+    calcDisplay.innerHTML = newDisplay;
 }
