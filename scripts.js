@@ -24,7 +24,9 @@ const equalButton = document.querySelector('.equals');
 
 
 let currentNumber = '';
+let newNumber = '';
 let operation = '';
+let result = '';
 let a = '';
 let b = '';
 
@@ -45,22 +47,21 @@ function divide(a, b) {
 }
 
 function operate(a, b) {
-    let result = '';
     if (operation === 'add'){
         result = add(a, b);
-        calcDisplay.innterHTML = result;
+        calcDisplay.innerHTML = result;
     }
     else if (operation === 'subtract') {
         result = subtract(a, b);
-        calcDisplay.innterHTML = result;
+        calcDisplay.innerHTML = result;
     }
     else if (operation === 'multiply') {
         result = multiply(a, b);
-        calcDisplay.innterHTML = result;
+        calcDisplay.innerHTML = result;
     }
     else if (operation === 'divide') {
         result === divide(a, b);
-        calcDisplay.innterHTML = result;
+        calcDisplay.innerHTML = result;
     }
     
 }
@@ -101,6 +102,7 @@ zeroButton.addEventListener('click', function() {
 // operator button event listeners
 addButton.addEventListener('click', function() {
     currentNumber = calcDisplay.innerHTML;
+    a = currentNumber;
     console.log(currentNumber);
     operation = 'add';
     console.log(operation);
@@ -109,6 +111,7 @@ addButton.addEventListener('click', function() {
 })
 subButton.addEventListener('click', function() {
     currentNumber = calcDisplay.innerHTML;
+    a = currentNumber;
     console.log(currentNumber);
     operation = 'subtract';
     console.log(operation);
@@ -116,6 +119,7 @@ subButton.addEventListener('click', function() {
 })
 multButton.addEventListener('click', function() {
     currentNumber = calcDisplay.innerHTML;
+    a = currentNumber;
     console.log(currentNumber);
     operation = 'multiply';
     console.log(operation);
@@ -123,6 +127,7 @@ multButton.addEventListener('click', function() {
 })
 divButton.addEventListener('click', function() {
     currentNumber = calcDisplay.innerHTML;
+    a = currentNumber;
     console.log(currentNumber);
     operation = 'divide';
     console.log(operation);
@@ -130,10 +135,16 @@ divButton.addEventListener('click', function() {
 })
 
 equalButton.addEventListener('click', function() {
-    let newNumber = calcDisplay.innerHTML;
+    newNumber = calcDisplay.innerHTML;
+    b = newNumber;
+    operate(a, b);
+
     console.log(currentNumber);
+    console.log(a);
     console.log(operation);
     console.log(newNumber);
-    operate(currentNumber, newNumber);
-    console.log(operate(currentNumber, newNumber));
+    console.log(b);
+    console.log(result);
+
+    
 })
