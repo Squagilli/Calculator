@@ -106,9 +106,9 @@ document.addEventListener('keydown', function(e) {
 
 // number button event listeners
 oneButton.addEventListener('click', function() {
-    if (operated >= 1) {
+    if (operated > 1) {
         calcDisplay.innerHTML = '';
-        calcDisplay.append('1');
+        calcDisplay.append('1');                     // ALSO WORKING HERE
     }
     else {
 
@@ -191,7 +191,7 @@ delButton.addEventListener('click', didDelete);
 
 // operator functions
 function didAdd() {
-    if (operated >= 1) {
+    if (operated >= 1) {                         // THIS IS WHERE YOURE WORKING
         newNumber = calcDisplay.innerHTML;
         operation = 'add';
         calcDisplay.innerHTML = '';
