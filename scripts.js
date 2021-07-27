@@ -21,6 +21,7 @@ const subButton = document.querySelector('.subtract');
 const multButton = document.querySelector('.multiply');
 const divButton = document.querySelector('.divide');
 const equalButton = document.querySelector('.equals');
+const clearButton = document.querySelector('.clear');
 
 
 let currentNumber = '';
@@ -49,19 +50,19 @@ function divide(a, b) {
 function operate(a, b) {
     if (operation === 'add'){
         result = add(a, b);
-        calcDisplay.innerHTML = result;
+        //calcDisplay.innerHTML = result;
     }
     else if (operation === 'subtract') {
         result = subtract(a, b);
-        calcDisplay.innerHTML = result;
+        //calcDisplay.innerHTML = result;
     }
     else if (operation === 'multiply') {
         result = multiply(a, b);
-        calcDisplay.innerHTML = result;
+        //calcDisplay.innerHTML = result;
     }
     else if (operation === 'divide') {
-        result === divide(a, b);
-        calcDisplay.innerHTML = result;
+        result = divide(a, b);
+        //calcDisplay.innerHTML = result;
     }
     
 }
@@ -133,18 +134,24 @@ divButton.addEventListener('click', function() {
     console.log(operation);
     calcDisplay.innerHTML = '';
 })
-
 equalButton.addEventListener('click', function() {
     newNumber = calcDisplay.innerHTML;
     b = newNumber;
     operate(a, b);
 
     console.log(currentNumber);
-    console.log(a);
     console.log(operation);
     console.log(newNumber);
-    console.log(b);
     console.log(result);
 
-    
+    calcDisplay.innerHTML = result;
+})
+clearButton.addEventListener('click', function() {
+    calcDisplay.innerHTML = '';
+    currentNumber = '';
+    newNumber = '';
+    operation = '';
+    result = '';
+    a = '';
+    b = '';
 })
