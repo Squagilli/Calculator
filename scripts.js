@@ -160,6 +160,9 @@ document.addEventListener('keydown', function(event) {
     else if (event.key === 'Delete') {
         didClear();
     }
+    else if (event.key === 'Backspace') {
+        didDelete();
+    }
 });
 
 
@@ -181,37 +184,42 @@ delButton.addEventListener('click', didDelete);
 // operator functions
 function didAdd() {
     currentNumber = calcDisplay.innerHTML;
-    a = currentNumber;
     operation = 'add';
     calcDisplay.innerHTML = '';
 };
 function didSubtract() {
     currentNumber = calcDisplay.innerHTML;
-    a = currentNumber;
     operation = 'subtract';
     calcDisplay.innerHTML = '';
 }
 function didMultiply() {
     currentNumber = calcDisplay.innerHTML;
-    a = currentNumber;
     operation = 'multiply';
     calcDisplay.innerHTML = '';
 }
 function didDivide() {
     currentNumber = calcDisplay.innerHTML;
-    a = currentNumber;
     operation = 'divide';
     calcDisplay.innerHTML = '';
 }
 function didEqual() {
+    let displayLength = calcDisplay.innerHTML.toString();
     if (!currentNumber && !newNumber) {
         alert(`don't do that!`);
     }
+    else if (displayLength > 12) {
+        newNumber = calcDisplay.innerHTML;
+        b = newNumber;
+        a = currentNumber;
+        operate(a, b);
+        calcDisplay.innerHTML = result.toFixed(2);
+    }
     else {
-    newNumber = calcDisplay.innerHTML;
-    b = newNumber;
-    operate(a, b);
-    calcDisplay.innerHTML = result.toFixed(2);
+        newNumber = calcDisplay.innerHTML;
+        b = newNumber;
+        a = currentNumber;
+        operate(a, b);
+        calcDisplay.innerHTML = result;
     }
 }
 function didClear() {
