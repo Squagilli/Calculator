@@ -23,7 +23,7 @@ const divButton = document.querySelector('.divide');
 const equalButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear');
 
-
+// dynamic variables
 let currentNumber = '';
 let newNumber = '';
 let operation = '';
@@ -31,9 +31,7 @@ let result = '';
 let a = '';
 let b = '';
 
-// basic functions
-
-
+// calculator functions
 function add(a, b) {
     return Number(a) + Number(b);
 }
@@ -50,19 +48,15 @@ function divide(a, b) {
 function operate(a, b) {
     if (operation === 'add'){
         result = add(a, b);
-        //calcDisplay.innerHTML = result;
     }
     else if (operation === 'subtract') {
         result = subtract(a, b);
-        //calcDisplay.innerHTML = result;
     }
     else if (operation === 'multiply') {
         result = multiply(a, b);
-        //calcDisplay.innerHTML = result;
     }
     else if (operation === 'divide') {
         result = divide(a, b);
-        //calcDisplay.innerHTML = result;
     }
     
 }
