@@ -27,6 +27,7 @@ const delButton = document.querySelector('.delete');
 // dynamic variables
 let currentNumber = '';
 let newNumber = '';
+let operated = 0;
 let operation = '';
 let result = '';
 let a = '';
@@ -105,7 +106,14 @@ document.addEventListener('keydown', function(e) {
 
 // number button event listeners
 oneButton.addEventListener('click', function() {
+    if (operated >= 1) {
+        calcDisplay.innerHTML = '';
+        calcDisplay.append('1');
+    }
+    else {
+
     calcDisplay.append('1');
+    }
 });
 twoButton.addEventListener('click', function() {
     calcDisplay.append('2');
@@ -183,9 +191,27 @@ delButton.addEventListener('click', didDelete);
 
 // operator functions
 function didAdd() {
-    currentNumber = calcDisplay.innerHTML;
-    operation = 'add';
-    calcDisplay.innerHTML = '';
+    if (operated >= 1) {
+        newNumber = calcDisplay.innerHTML;
+        operation = 'add';
+        calcDisplay.innerHTML = '';
+        b = newNumber;
+        a = currentNumber;
+        operate(a, b);
+        calcDisplay.innerHTML = result;
+        currentNumber = result;
+
+        console.log(currentNumber);
+        console.log(newNumber);
+    }
+    else {
+        currentNumber = calcDisplay.innerHTML;
+        operation = 'add';
+        calcDisplay.innerHTML = '';
+        operated++;
+        console.log(operated);
+    }
+
 };
 function didSubtract() {
     currentNumber = calcDisplay.innerHTML;
@@ -201,6 +227,7 @@ function didDivide() {
     currentNumber = calcDisplay.innerHTML;
     operation = 'divide';
     calcDisplay.innerHTML = '';
+
 }
 function didEqual() {
     let displayLength = calcDisplay.innerHTML.toString();
@@ -220,6 +247,9 @@ function didEqual() {
         a = currentNumber;
         operate(a, b);
         calcDisplay.innerHTML = result;
+        console.log(currentNumber);
+        console.log(operation);
+        console.log(newNumber);
     }
 }
 function didClear() {
