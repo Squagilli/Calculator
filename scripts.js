@@ -62,10 +62,45 @@ function operate(a, b) {
         else {
             result = divide(a, b);
         }
-        
     }
-    
 }
+
+// keyboard number event listeners
+window.addEventListener('keydown', function(e) {
+    if (e.key === '1') {
+        calcDisplay.append('1');
+    }
+    else if (e.key === '2') {
+        calcDisplay.append('2');
+    }
+    else if (e.key === '3') {
+        calcDisplay.append('3');
+    }
+    else if (e.key === '4') {
+        calcDisplay.append('4');
+    }
+    else if (e.key === '5') {
+        calcDisplay.append('5');
+    }
+    else if (e.key === '6') {
+        calcDisplay.append('6');
+    }
+    else if (e.key === '7') {
+        calcDisplay.append('7');
+    }
+    else if (e.key === '8') {
+        calcDisplay.append('8');
+    }
+    else if (e.key === '9') {
+        calcDisplay.append('9');
+    }
+    else if (e.key === '0') {
+        calcDisplay.append('0');
+    }
+    else if (e.key === '.') {
+        calcDisplay.append('.');
+    }
+});
 
 // number button event listeners
 oneButton.addEventListener('click', function() {
@@ -100,46 +135,69 @@ zeroButton.addEventListener('click', function() {
 });
 decimalButton.addEventListener('click', function() {
     calcDisplay.append('.');
-})
+});
+
+
+
+// keyboard event listeners
+window.addEventListener('keydown', function(e) {
+    if (e.key === '187') {
+        didAdd();
+    }
+    else if (e.key === '189') {
+        didSubtract();
+    }
+    else if (e.key === '*') {
+        didMultiply();
+    }
+    else if (e.key === 'Forward slash') {
+        didDivide();
+    }
+    else if (e.key === 'Enter') {
+        didEqual();
+    }
+});
 
 
 // operator button event listeners
-addButton.addEventListener('click', function() {
+addButton.addEventListener('click', didAdd);
+
+subButton.addEventListener('click', didSubtract);
+
+multButton.addEventListener('click', didMultiply);
+
+divButton.addEventListener('click', didDivide);
+
+equalButton.addEventListener('click', didEqual);
+
+clearButton.addEventListener('click', didClear);
+
+// operator functions
+function didAdd() {
     currentNumber = calcDisplay.innerHTML;
     a = currentNumber;
-    console.log(currentNumber);
     operation = 'add';
-    console.log(operation);
-
-    console.log(newNumber);
     calcDisplay.innerHTML = '';
-
-})
-subButton.addEventListener('click', function() {
+};
+function didSubtract() {
     currentNumber = calcDisplay.innerHTML;
     a = currentNumber;
-    console.log(currentNumber);
     operation = 'subtract';
-    console.log(operation);
     calcDisplay.innerHTML = '';
-})
-multButton.addEventListener('click', function() {
+}
+function didMultiply() {
     currentNumber = calcDisplay.innerHTML;
     a = currentNumber;
-    console.log(currentNumber);
     operation = 'multiply';
-    console.log(operation);
     calcDisplay.innerHTML = '';
-})
-divButton.addEventListener('click', function() {
+}
+function didDivide() {
     currentNumber = calcDisplay.innerHTML;
     a = currentNumber;
-    console.log(currentNumber);
     operation = 'divide';
-    console.log(operation);
     calcDisplay.innerHTML = '';
-})
-equalButton.addEventListener('click', function() {
+}
+function didEqual() {
     if (!currentNumber && !newNumber) {
         alert(`don't do that!`);
     }
@@ -147,17 +205,10 @@ equalButton.addEventListener('click', function() {
     newNumber = calcDisplay.innerHTML;
     b = newNumber;
     operate(a, b);
-
-    console.log(currentNumber);
-    console.log(operation);
-    console.log(newNumber);
-    console.log(result);
-
     calcDisplay.innerHTML = result.toFixed(2);
     }
-    
-})
-clearButton.addEventListener('click', function() {
+}
+function didClear() {
     calcDisplay.innerHTML = '';
     currentNumber = '';
     newNumber = '';
@@ -165,4 +216,4 @@ clearButton.addEventListener('click', function() {
     result = '';
     a = '';
     b = '';
-})
+}
