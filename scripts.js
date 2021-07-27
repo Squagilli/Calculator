@@ -1,4 +1,3 @@
-// HTML items
 
 // number buttons
 const oneButton = document.querySelector('.one');
@@ -11,6 +10,7 @@ const sevenButton = document.querySelector('.seven');
 const eightButton = document.querySelector('.eight');
 const nineButton = document.querySelector('.nine');
 const zeroButton = document.querySelector('.zero');
+const decimalButton = document.querySelector('.dot');
 
 // calc display 
 const calcDisplay = document.querySelector('.calc-input');
@@ -98,6 +98,9 @@ nineButton.addEventListener('click', function() {
 zeroButton.addEventListener('click', function() {
     calcDisplay.append('0');
 });
+decimalButton.addEventListener('click', function() {
+    calcDisplay.append('.');
+})
 
 
 // operator button event listeners
@@ -150,7 +153,7 @@ equalButton.addEventListener('click', function() {
     console.log(newNumber);
     console.log(result);
 
-    calcDisplay.innerHTML = result;
+    calcDisplay.innerHTML = result.toFixed(2);
     }
     
 })
