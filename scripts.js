@@ -137,6 +137,10 @@ divButton.addEventListener('click', function() {
     calcDisplay.innerHTML = '';
 })
 equalButton.addEventListener('click', function() {
+    if (!currentNumber && !newNumber) {
+        alert(`don't do that!`);
+    }
+    else {
     newNumber = calcDisplay.innerHTML;
     b = newNumber;
     operate(a, b);
@@ -147,6 +151,8 @@ equalButton.addEventListener('click', function() {
     console.log(result);
 
     calcDisplay.innerHTML = result;
+    }
+    
 })
 clearButton.addEventListener('click', function() {
     calcDisplay.innerHTML = '';
