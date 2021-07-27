@@ -56,7 +56,13 @@ function operate(a, b) {
         result = multiply(a, b);
     }
     else if (operation === 'divide') {
-        result = divide(a, b);
+        if (newNumber === '0') {
+            alert(`don't do that!`);
+        }
+        else {
+            result = divide(a, b);
+        }
+        
     }
     
 }
@@ -101,6 +107,8 @@ addButton.addEventListener('click', function() {
     console.log(currentNumber);
     operation = 'add';
     console.log(operation);
+
+    console.log(newNumber);
     calcDisplay.innerHTML = '';
 
 })
