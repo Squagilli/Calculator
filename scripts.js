@@ -140,21 +140,24 @@ decimalButton.addEventListener('click', function() {
 
 
 // keyboard event listeners
-window.addEventListener('keydown', function(e) {
-    if (e.key === '187') {
+document.addEventListener('keydown', function(event) {
+    if (event.key === '+') {
         didAdd();
     }
-    else if (e.key === '189') {
+    else if (event.key === '-') {
         didSubtract();
     }
-    else if (e.key === '*') {
+    else if (event.key === '*') {
         didMultiply();
     }
-    else if (e.key === 'Forward slash') {
+    else if (event.key === '/') {
         didDivide();
     }
-    else if (e.key === 'Enter') {
+    else if (event.key === 'Enter') {
         didEqual();
+    }
+    else if (event.key === 'Delete') {
+        didClear();
     }
 });
 
