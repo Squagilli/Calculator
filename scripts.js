@@ -32,12 +32,8 @@ let operation = '';
 let result = '';
 let a = '';
 let b = '';
-operations = [
-    ['*', (a, b) => +a * +b],
-    ['/', (a, b) => +a / +b],
-    ['+', (a, b) => +a + +b],
-    ['-', (a, b) => +a - +b],
-];
+let numArray = [];
+
 
 // calculator functions
 function add(a, b) {
@@ -192,8 +188,12 @@ delButton.addEventListener('click', didDelete);
 function didAdd() {
     currentNumber = calcDisplay.innerHTML;
     operation = 'add';
+
+    numArray.push(calcDisplay.innerHTML);
+    numArray.push(operation)
     calcDisplay.innerHTML = '';
 
+    console.log(numArray);
     console.log(currentNumber);
     console.log(operation)
     console.log(newNumber);
@@ -245,6 +245,7 @@ function didClear() {
     result = '';
     a = '';
     b = '';
+    numArray = [];
 }
 function didDelete() {
     let toDelete = calcDisplay.innerHTML;
