@@ -1,4 +1,4 @@
-'use strict';
+
 // number buttons
 const oneButton = document.querySelector('.one');
 const twoButton = document.querySelector('.two');
@@ -32,6 +32,12 @@ let operation = '';
 let result = '';
 let a = '';
 let b = '';
+operations = [
+    ['*', (a, b) => +a * +b],
+    ['/', (a, b) => +a / +b],
+    ['+', (a, b) => +a + +b],
+    ['-', (a, b) => +a - +b],
+];
 
 // calculator functions
 function add(a, b) {
@@ -106,14 +112,7 @@ document.addEventListener('keydown', function(e) {
 
 // number button event listeners
 oneButton.addEventListener('click', function() {
-    if (operated > 1) {
-        calcDisplay.innerHTML = '';
-        calcDisplay.append('1');                     // ALSO WORKING HERE
-    }
-    else {
-
     calcDisplay.append('1');
-    }
 });
 twoButton.addEventListener('click', function() {
     calcDisplay.append('2');
@@ -191,28 +190,14 @@ delButton.addEventListener('click', didDelete);
 
 // operator functions
 function didAdd() {
-    if (operated >= 1) {                         // THIS IS WHERE YOURE WORKING
-        newNumber = calcDisplay.innerHTML;
-        operation = 'add';
-        calcDisplay.innerHTML = '';
-        b = newNumber;
-        a = currentNumber;
-        operate(a, b);
-        calcDisplay.innerHTML = result;
-        currentNumber = result;
+    currentNumber = calcDisplay.innerHTML;
+    operation = 'add';
+    calcDisplay.innerHTML = '';
 
-        console.log(currentNumber);
-        console.log(newNumber);
-    }
-    else {
-        currentNumber = calcDisplay.innerHTML;
-        operation = 'add';
-        calcDisplay.innerHTML = '';
-        operated++;
-        console.log(operated);
-    }
-
-};
+    console.log(currentNumber);
+    console.log(operation)
+    console.log(newNumber);
+}
 function didSubtract() {
     currentNumber = calcDisplay.innerHTML;
     operation = 'subtract';
